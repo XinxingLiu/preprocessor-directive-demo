@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(HostingMode)'=='cloud'">
+    <DefineConstants>HOSTED</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(HostingMode)'=='cloud'">
+    <ProjectReference Include="../lib/MyLib.csproj"/>
+  </ItemGroup>
+
+</Project>
